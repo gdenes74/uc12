@@ -111,9 +111,14 @@ public class Menu extends javax.swing.JFrame {
     }//fecha método
 
     private void abrirJanelaTable() {
-        GuiJTableBuscaPaciente gmp = new GuiJTableBuscaPaciente();
-        jAreaTrabalho.add(gmp);
-        gmp.setVisible(true);
+      try {
+            GuiJTableBuscaPaciente gmp = new GuiJTableBuscaPaciente();
+            jAreaTrabalho.add(gmp);
+            gmp.setVisible(true);
+        } catch (Exception e) {
+            // Trata o erro e exibe a mensagem
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao abrir a tela de busca de pacientes: " + e.getMessage());
+        }  
     }//fecha método
 
     private void jmiCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadProdutoActionPerformed
