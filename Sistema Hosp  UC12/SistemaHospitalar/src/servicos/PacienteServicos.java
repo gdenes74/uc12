@@ -32,22 +32,37 @@ public class PacienteServicos {
 
     // Método para buscar um paciente por ID
     public ArrayList<Paciente> buscarPacienteFiltro(String query) throws SQLException {
+        try{
+            //Busca da Fabrica um objeto PacienteDAO
+       PacienteDAO pacDAO = DAOFactory.getPacienteDAO();
 
-        // Busca da Fábrica um obj. PacienteDAO
-        PacienteDAO pacDAO = DAOFactory.getPacienteDAO();
-
-        // Chamando método buscarPaciente para buscar o paciente pelo ID
+        // Chamando método buscarPacienteFiltro do PacienteDAO passando a consulta
         return pacDAO.buscarPacienteFiltro(query);
+    }catch (SQLException e){
+        //Trata a exceção e lança novamente para a camada superior
+        throw new SQLException("Erro ao buscar pacientes com filtro" + e.getMessage());
+    }   
     }
 
     // Método para buscar todos os pacientes
     public ArrayList<Paciente> buscarPaciente() throws SQLException {
-
-        // Busca da Fábrica um obj. PacienteDAO
-        PacienteDAO pacDAO = DAOFactory.getPacienteDAO();
-
-        // Chamando método buscarPaciente para buscar todos os pacientes
+        try{
+           // Busca da Fábrica um obj. PacienteDAO 
+           PacienteDAO pacDAO = DAOFactory.getPacienteDAO();
+           
+           // Chamando método buscarPaciente do PacienteDAO para buscar todos os pacientes
         return pacDAO.buscarPaciente();
+        }catch (SQLException e ){
+            //Trata a exceção e lança novamente para a camada superior
+        throw new SQLException("Erro ao buscar todos os pacientes: " + e.getMessage());
+        }
+        }
+    
+    
     }
 
-}
+        
+        
+
+        
+    

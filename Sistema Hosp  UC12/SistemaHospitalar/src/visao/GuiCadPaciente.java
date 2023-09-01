@@ -82,6 +82,11 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
         jlDataNasc.setBounds(40, 260, 100, 30);
 
         jtDataNasc.setToolTipText("(dd/mm/aaaa)");
+        jtDataNasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtDataNascActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(jtDataNasc);
         jtDataNasc.setBounds(140, 260, 210, 30);
 
@@ -154,6 +159,10 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDataNascActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDataNascActionPerformed
 
     private void cadastrar() {
         try {
