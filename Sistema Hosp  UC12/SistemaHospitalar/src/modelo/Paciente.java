@@ -118,4 +118,8 @@ public class Paciente {
         this.convenio = convenio;
     }
 
+    public void setString(int i, String rg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
